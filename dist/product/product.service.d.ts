@@ -7,4 +7,5 @@ export declare class ProductService {
     create(data: any): Promise<Product>;
     get(id: number): Promise<Product>;
     update(id: number, data: any): Promise<any>;
+    delete(id: number): Promise<any>;
 }

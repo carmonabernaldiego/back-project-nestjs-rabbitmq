@@ -37,6 +37,9 @@ let ProductController = class ProductController {
             image
         });
     }
+    async delete(id) {
+        return this.productService.delete(id);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -68,6 +71,13 @@ __decorate([
     __metadata("design:paramtypes", [Number, String, String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "update", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "delete", null);
 ProductController = __decorate([
     (0, common_1.Controller)('products'),
     __metadata("design:paramtypes", [product_service_1.ProductService])
