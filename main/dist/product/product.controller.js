@@ -12,12 +12,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductController = void 0;
 const common_1 = require("@nestjs/common");
 const product_service_1 = require("./product.service");
+const microservices_1 = require("@nestjs/microservices");
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
     }
     async all() {
         return this.productService.all();
+    }
+    async hello(data) {
+        console.log(data);
     }
 };
 __decorate([
@@ -26,6 +30,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "all", null);
+__decorate([
+    (0, microservices_1.EventPattern)('hello'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "hello", null);
 ProductController = __decorate([
     (0, common_1.Controller)('products'),
     __metadata("design:paramtypes", [product_service_1.ProductService])

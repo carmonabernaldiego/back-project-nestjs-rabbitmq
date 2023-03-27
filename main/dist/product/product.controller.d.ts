@@ -30,4 +30,5 @@ export declare class ProductController {
     all(): Promise<(import("mongoose").Document<unknown, {}, import("./product.model").ProductDocument> & Omit<import("./product.model").Product & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     }, never>)[]>;
+    hello(data: string): Promise<void>;
 }
