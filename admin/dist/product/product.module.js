@@ -24,7 +24,7 @@ ProductModule = __decorate([
                     name: 'PRODUCT_SERVICE',
                     transport: microservices_1.Transport.RMQ,
                     options: {
-                        urls: ['amqps://rtbjqfiq:gn1RuPc0hbEqAxVTfb4yhjidPs1mcjSf@chimpanzee.rmq.cloudamqp.com/rtbjqfiq'],
+                        urls: ['amqps://rtbjqfiq:ZGAPtUubSdLZW6Cp8zgufY7_eMKN5k4n@chimpanzee.rmq.cloudamqp.com/rtbjqfiq'],
                         queue: 'main_queue',
                         queueOptions: {
                             durable: false,
