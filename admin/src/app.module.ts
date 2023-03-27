@@ -8,10 +8,10 @@ import { ProductModule } from './product/product.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'project-mysql-pkdc-admin.chywqaqyevhp.us-east-1.rds.amazonaws.com',
       port: 3306,
-      username: 'root',
-      password: 'root',
+      username: 'admin',
+      password: '1937James7823',
       database: 'nest_admin',
       autoLoadEntities: true, /*remover en producción*/
       synchronize: true,
