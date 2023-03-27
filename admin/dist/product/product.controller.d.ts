@@ -9,4 +9,5 @@ export declare class ProductController {
     get(id: number): Promise<import("./product.entity").Product>;
     update(id: number, title: string, image: string): Promise<import("./product.entity").Product>;
     delete(id: number): Promise<void>;
+    like(id: number): Promise<any>;
 }

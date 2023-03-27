@@ -48,6 +48,12 @@ let ProductController = class ProductController {
         await this.productService.delete(id);
         this.client.emit('product_deleted', id);
     }
+    async like(id) {
+        const product = await this.productService.get(id);
+        return this.productService.update(id, {
+            likes: product.likes + 1,
+        });
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -86,6 +92,13 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "delete", null);
+__decorate([
+    (0, common_1.Post)(':id/like'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "like", null);
 ProductController = __decorate([
     (0, common_1.Controller)('products'),
     __param(1, (0, common_1.Inject)('PRODUCT_SERVICE')),
