@@ -7,6 +7,6 @@ export declare class ProductController {
     all(): Promise<import("./product.entity").Product[]>;
     create(title: string, image: string): Promise<import("./product.entity").Product>;
     get(id: number): Promise<import("./product.entity").Product>;
-    update(id: number, title: string, image: string): Promise<any>;
-    delete(id: number): Promise<any>;
+    update(id: number, title: string, image: string): Promise<import("./product.entity").Product>;
+    delete(id: number): Promise<void>;
 }

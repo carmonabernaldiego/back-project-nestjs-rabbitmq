@@ -22,26 +22,31 @@ let ProductController = class ProductController {
         this.client = client;
     }
     async all() {
-        this.client.emit('hello', '¡Bienvenido a RabbitMQ!');
         return this.productService.all();
     }
     async create(title, image) {
-        return this.productService.create({
+        const product = await this.productService.create({
             title,
             image,
         });
+        this.client.emit('product_created', product);
+        return product;
     }
     async get(id) {
         return this.productService.get(id);
     }
     async update(id, title, image) {
-        return this.productService.update(id, {
+        await this.productService.update(id, {
             title,
             image,
         });
+        const product = await this.productService.get(id);
+        this.client.emit('product_updated', product);
+        return product;
     }
     async delete(id) {
-        return this.productService.delete(id);
+        await this.productService.delete(id);
+        this.client.emit('product_deleted', id);
     }
 };
 __decorate([

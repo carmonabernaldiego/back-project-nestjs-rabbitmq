@@ -20,8 +20,13 @@ let ProductController = class ProductController {
     async all() {
         return this.productService.all();
     }
-    async hello(data) {
-        console.log(data);
+    async hello(product) {
+        await this.productService.create({
+            id: product.id,
+            title: product.title,
+            image: product.image,
+            likes: product.likes,
+        });
     }
 };
 __decorate([
@@ -31,9 +36,9 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "all", null);
 __decorate([
-    (0, microservices_1.EventPattern)('hello'),
+    (0, microservices_1.EventPattern)('product_created'),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "hello", null);
 ProductController = __decorate([
