@@ -15,9 +15,18 @@ export class ProductController {
   }
 
   @Post()
-  async create(@Body('title') title: string, @Body('image') image: string) {
+  async create(
+    @Body('name') name: string,
+    @Body('description') description: string,
+    @Body('product_type') product_type: string,
+    @Body('price') price: number,
+    @Body('image') image: string,
+  ) {
     const product = await this.productService.create({
-      title,
+      name,
+      description,
+      product_type,
+      price,
       image,
     });
 
@@ -34,11 +43,17 @@ export class ProductController {
   @Put(':id')
   async update(
     @Param('id') id: number,
-    @Body('title') title: string,
+    @Body('name') name: string,
+    @Body('description') description: string,
+    @Body('product_type') product_type: string,
+    @Body('price') price: number,
     @Body('image') image: string,
   ) {
     await this.productService.update(id, {
-      title,
+      name,
+      description,
+      product_type,
+      price,
       image,
     });
 
@@ -59,7 +74,7 @@ export class ProductController {
   @Post(':id/like')
   async like(@Param('id') id: number) {
     const product = await this.productService.get(id);
-    
+
     return this.productService.update(id, {
       likes: product.likes + 1,
     });

@@ -24,9 +24,12 @@ let ProductController = class ProductController {
     async all() {
         return this.productService.all();
     }
-    async create(title, image) {
+    async create(name, description, product_type, price, image) {
         const product = await this.productService.create({
-            title,
+            name,
+            description,
+            product_type,
+            price,
             image,
         });
         this.client.emit('product_created', product);
@@ -35,9 +38,12 @@ let ProductController = class ProductController {
     async get(id) {
         return this.productService.get(id);
     }
-    async update(id, title, image) {
+    async update(id, name, description, product_type, price, image) {
         await this.productService.update(id, {
-            title,
+            name,
+            description,
+            product_type,
+            price,
             image,
         });
         const product = await this.productService.get(id);
@@ -63,10 +69,13 @@ __decorate([
 ], ProductController.prototype, "all", null);
 __decorate([
     (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)('title')),
-    __param(1, (0, common_1.Body)('image')),
+    __param(0, (0, common_1.Body)('name')),
+    __param(1, (0, common_1.Body)('description')),
+    __param(2, (0, common_1.Body)('product_type')),
+    __param(3, (0, common_1.Body)('price')),
+    __param(4, (0, common_1.Body)('image')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:paramtypes", [String, String, String, Number, String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "create", null);
 __decorate([
@@ -79,10 +88,13 @@ __decorate([
 __decorate([
     (0, common_1.Put)(':id'),
     __param(0, (0, common_1.Param)('id')),
-    __param(1, (0, common_1.Body)('title')),
-    __param(2, (0, common_1.Body)('image')),
+    __param(1, (0, common_1.Body)('name')),
+    __param(2, (0, common_1.Body)('description')),
+    __param(3, (0, common_1.Body)('product_type')),
+    __param(4, (0, common_1.Body)('price')),
+    __param(5, (0, common_1.Body)('image')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, String, String]),
+    __metadata("design:paramtypes", [Number, String, String, String, Number, String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "update", null);
 __decorate([

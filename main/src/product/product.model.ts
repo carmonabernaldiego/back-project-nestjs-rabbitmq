@@ -9,7 +9,16 @@ export class Product {
   id: number;
 
   @Prop()
-  title: string;
+  name: string;
+
+  @Prop()
+  description: string;
+
+  @Prop()
+  product_type: string;
+
+  @Prop()
+  price: number;
 
   @Prop()
   image: string;

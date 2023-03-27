@@ -21,7 +21,7 @@ export class ProductController {
 
     this.httpService
       .post(`http://localhost:8000/api/products/${id}/like`, {})
-      .subscribe(res => {
+      .subscribe((res) => {
         console.log(res);
       });
 
@@ -34,7 +34,10 @@ export class ProductController {
   async productCreated(product: any) {
     await this.productService.create({
       id: product.id,
-      title: product.title,
+      name: product.name,
+      description: product.description,
+      product_type: product.product_type,
+      price: product.price,
       image: product.image,
       likes: product.likes,
     });
@@ -44,7 +47,10 @@ export class ProductController {
   async productUpdated(product: any) {
     await this.productService.update(product.id, {
       id: product.id,
-      title: product.title,
+      name: product.name,
+      description: product.description,
+      product_type: product.product_type,
+      price: product.price,
       image: product.image,
       likes: product.likes,
     });

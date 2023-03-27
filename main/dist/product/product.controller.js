@@ -29,7 +29,7 @@ let ProductController = class ProductController {
         const product = await this.productService.findOne(id);
         this.httpService
             .post(`http://localhost:8000/api/products/${id}/like`, {})
-            .subscribe(res => {
+            .subscribe((res) => {
             console.log(res);
         });
         return this.productService.update(id, {
@@ -39,7 +39,10 @@ let ProductController = class ProductController {
     async productCreated(product) {
         await this.productService.create({
             id: product.id,
-            title: product.title,
+            name: product.name,
+            description: product.description,
+            product_type: product.product_type,
+            price: product.price,
             image: product.image,
             likes: product.likes,
         });
@@ -47,7 +50,10 @@ let ProductController = class ProductController {
     async productUpdated(product) {
         await this.productService.update(product.id, {
             id: product.id,
-            title: product.title,
+            name: product.name,
+            description: product.description,
+            product_type: product.product_type,
+            price: product.price,
             image: product.image,
             likes: product.likes,
         });
