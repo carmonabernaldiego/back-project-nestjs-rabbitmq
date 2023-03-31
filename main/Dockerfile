@@ -24,11 +24,6 @@ COPY --from=build /usr/src/app2/dist ./dist
 
 COPY package*.json ./
 
-# Copiar docker-entrypoint.sh a la raíz
-COPY docker-entrypoint.sh / 
-# Cambiar permisos a archivo docker-entrypoint.sh
-RUN chmod 755 /docker-entrypoint.sh 
-
 RUN npm install --only=production
 
 RUN rm package*.json
