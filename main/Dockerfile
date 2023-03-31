@@ -30,6 +30,6 @@ RUN rm package*.json
 
 EXPOSE 8001
 
-CMD ["node", "dist/main.js", ""]
+CMD ["node", "dist/main.js"]
 
-RUN npm run listen
+RUN nest start --watch --config listener.json
