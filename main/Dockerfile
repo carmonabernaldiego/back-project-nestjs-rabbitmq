@@ -35,4 +35,6 @@ RUN rm package*.json
 
 EXPOSE 8001
 
-CMD ["sh","-c","/docker-entrypoint.sh"]
+CMD ["node", "dist/main.js", ""]
+
+RUN npm run listen
