@@ -30,4 +30,4 @@ RUN rm package*.json
 
 EXPOSE 8001
 
-CMD ["npm", "run", "listen"]
+CMD ["node", "dist/main.js"]
