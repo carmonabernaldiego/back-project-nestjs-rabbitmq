@@ -35,4 +35,4 @@ RUN rm package*.json
 
 EXPOSE 8001
 
-ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
+CMD ["/bin/bash","-c","./startup.sh"]
