@@ -2,4 +2,4 @@
 node dist/main.js
 
 # Ejecutar escuchador
-node listener.json
+node src/listener.json
