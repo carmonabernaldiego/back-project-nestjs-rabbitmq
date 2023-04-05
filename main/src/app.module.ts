@@ -6,7 +6,7 @@ import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://diegocb:James7823+@cluster0.mahiish.mongodb.net', {
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/nest_main', {
       autoCreate: true,
     }),
     ProductModule,
