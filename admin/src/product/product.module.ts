@@ -13,7 +13,9 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'PRODUCT_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost'],
+          urls: [
+            'amqps://b-8942fba6-d1a5-4968-958e-27fa0b8bdd2e.mq.us-east-1.amazonaws.com',
+          ],
           queue: 'main_queue',
           queueOptions: {
             durable: false,
@@ -26,5 +28,3 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   providers: [ProductService],
 })
 export class ProductModule {}
-
-/*Local: amqp://localhost:5672*/
