@@ -10,7 +10,7 @@ async function bootstrap() {
         transport: microservices_1.Transport.RMQ,
         options: {
             urls: [
-                'amqps://b-3a0127ff-aa1a-4b42-9931-246697f5f50f.mq.us-east-1.amazonaws.com',
+                'amqps://b-8942fba6-d1a5-4968-958e-27fa0b8bdd2e.mq.us-east-1.amazonaws.com',
             ],
             queue: 'main_queue',
             queueOptions: {
