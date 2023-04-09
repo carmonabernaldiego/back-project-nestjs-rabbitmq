@@ -28,7 +28,7 @@ let ProductController = class ProductController {
     async like(id) {
         const product = await this.productService.findOne(id);
         this.httpService
-            .post(`http://127.0.0.1:8000/api/products/${id}/like`, {})
+            .post(`http://44.201.142.37:8000/api/products/${id}/like`, {})
             .subscribe((res) => {
             console.log(res);
         });
