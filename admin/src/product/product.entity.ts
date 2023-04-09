@@ -17,6 +17,9 @@ export class Product {
   @Column('decimal', { precision: 6, scale: 2 })
   price: number;
 
+  @Column({ default: 0 })
+  stock: number;
+
   @Column()
   image: string;
 

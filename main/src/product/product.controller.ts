@@ -38,6 +38,7 @@ export class ProductController {
       description: product.description,
       product_type: product.product_type,
       price: product.price,
+      stock: product.stock,
       image: product.image,
       likes: product.likes,
     });
@@ -51,6 +52,7 @@ export class ProductController {
       description: product.description,
       product_type: product.product_type,
       price: product.price,
+      stock: product.stock,
       image: product.image,
       likes: product.likes,
     });

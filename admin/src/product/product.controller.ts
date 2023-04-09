@@ -1,4 +1,13 @@
-import { Body, Controller, Delete, Get, Inject, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Inject,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { ProductService } from './product.service';
 import { ClientProxy } from '@nestjs/microservices';
 
@@ -20,6 +29,7 @@ export class ProductController {
     @Body('description') description: string,
     @Body('product_type') product_type: string,
     @Body('price') price: number,
+    @Body('stock') stock: number,
     @Body('image') image: string,
   ) {
     const product = await this.productService.create({
@@ -27,6 +37,7 @@ export class ProductController {
       description,
       product_type,
       price,
+      stock,
       image,
     });
 
@@ -47,6 +58,7 @@ export class ProductController {
     @Body('description') description: string,
     @Body('product_type') product_type: string,
     @Body('price') price: number,
+    @Body('stock') stock: number,
     @Body('image') image: string,
   ) {
     await this.productService.update(id, {
@@ -54,6 +66,7 @@ export class ProductController {
       description,
       product_type,
       price,
+      stock,
       image,
     });
 
