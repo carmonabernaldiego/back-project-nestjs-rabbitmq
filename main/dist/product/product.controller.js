@@ -43,6 +43,7 @@ let ProductController = class ProductController {
             description: product.description,
             product_type: product.product_type,
             price: product.price,
+            stock: product.stock,
             image: product.image,
             likes: product.likes,
         });
@@ -54,6 +55,7 @@ let ProductController = class ProductController {
             description: product.description,
             product_type: product.product_type,
             price: product.price,
+            stock: product.stock,
             image: product.image,
             likes: product.likes,
         });

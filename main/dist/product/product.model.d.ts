@@ -22,7 +22,7 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { Document } from "mongoose";
+import { Document } from 'mongoose';
 export type ProductDocument = Product & Document;
 export declare class Product {
     id: number;
@@ -30,6 +30,7 @@ export declare class Product {
     description: string;
     product_type: string;
     price: number;
+    stock: number;
     image: string;
     likes: number;
 }

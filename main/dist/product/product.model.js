@@ -35,6 +35,10 @@ __decorate([
 ], Product.prototype, "price", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),
+    __metadata("design:type", Number)
+], Product.prototype, "stock", void 0);
+__decorate([
+    (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "image", void 0);
 __decorate([
