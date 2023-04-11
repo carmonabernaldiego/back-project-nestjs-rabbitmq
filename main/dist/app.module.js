@@ -25,7 +25,7 @@ AppModule = __decorate([
             product_module_1.ProductModule,
             throttler_1.ThrottlerModule.forRoot({
                 ttl: 60,
-                limit: 15,
+                limit: 5,
             }),
         ],
         controllers: [app_controller_1.AppController],

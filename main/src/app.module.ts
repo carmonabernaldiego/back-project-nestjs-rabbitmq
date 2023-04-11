@@ -17,7 +17,7 @@ import { ProductModule } from './product/product.module';
     ProductModule,
     ThrottlerModule.forRoot({
       ttl: 60,
-      limit: 15,
+      limit: 5,
     }),
   ],
   controllers: [AppController],
