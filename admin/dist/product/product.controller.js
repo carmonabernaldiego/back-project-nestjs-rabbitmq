@@ -16,6 +16,7 @@ exports.ProductController = void 0;
 const common_1 = require("@nestjs/common");
 const product_service_1 = require("./product.service");
 const microservices_1 = require("@nestjs/microservices");
+const throttler_1 = require("@nestjs/throttler");
 let ProductController = class ProductController {
     constructor(productService, client) {
         this.productService = productService;
@@ -24,12 +25,13 @@ let ProductController = class ProductController {
     async all() {
         return this.productService.all();
     }
-    async create(name, description, product_type, price, image) {
+    async create(name, description, product_type, price, stock, image) {
         const product = await this.productService.create({
             name,
             description,
             product_type,
             price,
+            stock,
             image,
         });
         this.client.emit('product_created', product);
@@ -38,12 +40,13 @@ let ProductController = class ProductController {
     async get(id) {
         return this.productService.get(id);
     }
-    async update(id, name, description, product_type, price, image) {
+    async update(id, name, description, product_type, price, stock, image) {
         await this.productService.update(id, {
             name,
             description,
             product_type,
             price,
+            stock,
             image,
         });
         const product = await this.productService.get(id);
@@ -62,6 +65,7 @@ let ProductController = class ProductController {
     }
 };
 __decorate([
+    (0, throttler_1.SkipThrottle)(),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -73,9 +77,10 @@ __decorate([
     __param(1, (0, common_1.Body)('description')),
     __param(2, (0, common_1.Body)('product_type')),
     __param(3, (0, common_1.Body)('price')),
-    __param(4, (0, common_1.Body)('image')),
+    __param(4, (0, common_1.Body)('stock')),
+    __param(5, (0, common_1.Body)('image')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String, String, Number, String]),
+    __metadata("design:paramtypes", [String, String, String, Number, Number, String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "create", null);
 __decorate([
@@ -92,9 +97,10 @@ __decorate([
     __param(2, (0, common_1.Body)('description')),
     __param(3, (0, common_1.Body)('product_type')),
     __param(4, (0, common_1.Body)('price')),
-    __param(5, (0, common_1.Body)('image')),
+    __param(5, (0, common_1.Body)('stock')),
+    __param(6, (0, common_1.Body)('image')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, String, String, String, Number, String]),
+    __metadata("design:paramtypes", [Number, String, String, String, Number, Number, String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "update", null);
 __decorate([

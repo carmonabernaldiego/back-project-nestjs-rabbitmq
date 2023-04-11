@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { ClientProxy } from '@nestjs/microservices';
+import { SkipThrottle } from '@nestjs/throttler';
 
 @Controller('products')
 export class ProductController {
@@ -18,6 +19,7 @@ export class ProductController {
     @Inject('PRODUCT_SERVICE') private readonly client: ClientProxy,
   ) {}
 
+  @SkipThrottle()
   @Get()
   async all() {
     return this.productService.all();

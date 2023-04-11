@@ -4,6 +4,7 @@ export declare class Product {
     description: string;
     product_type: string;
     price: number;
+    stock: number;
     image: string;
     likes: number;
 }

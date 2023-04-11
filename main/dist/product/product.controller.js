@@ -17,6 +17,7 @@ const axios_1 = require("@nestjs/axios");
 const common_1 = require("@nestjs/common");
 const product_service_1 = require("./product.service");
 const microservices_1 = require("@nestjs/microservices");
+const throttler_1 = require("@nestjs/throttler");
 let ProductController = class ProductController {
     constructor(productService, httpService) {
         this.productService = productService;
@@ -65,6 +66,7 @@ let ProductController = class ProductController {
     }
 };
 __decorate([
+    (0, throttler_1.SkipThrottle)(),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
