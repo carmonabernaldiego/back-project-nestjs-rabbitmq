@@ -13,9 +13,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'PRODUCT_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: [
-            'amqps://b-8942fba6-d1a5-4968-958e-27fa0b8bdd2e.mq.us-east-1.amazonaws.com',
-          ],
+          urls: ['amqp://localhost'],
           queue: 'main_queue',
           queueOptions: {
             durable: false,

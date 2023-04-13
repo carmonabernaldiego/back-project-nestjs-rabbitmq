@@ -21,10 +21,10 @@ AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'db-admin-pkdc.chywqaqyevhp.us-east-1.rds.amazonaws.com',
+                host: 'localhost',
                 port: 3306,
-                username: 'admin',
-                password: '1937james7823',
+                username: 'root',
+                password: 'root',
                 database: 'nest_admin',
                 autoLoadEntities: true,
                 synchronize: true,

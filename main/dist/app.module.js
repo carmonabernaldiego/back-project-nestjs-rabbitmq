@@ -19,7 +19,7 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://diegocb:James7823+@cluster0.mahiish.mongodb.net/?retryWrites=true&w=majority', {
+            mongoose_1.MongooseModule.forRoot('mongodb://127.0.0.1:27017/nest_main', {
                 autoCreate: true,
             }),
             product_module_1.ProductModule,
