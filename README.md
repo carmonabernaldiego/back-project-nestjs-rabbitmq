@@ -1,1 +1,1 @@
-# Backend - Microservices with NestJS
+# Backend - Microservices with NestJS & RabbitMQ
